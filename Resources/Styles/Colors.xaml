@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- ===========================
+     1. Grund‐Farben
+     =========================== -->
+    <Color x:Key="White">#FFFFFFFF</Color>
+    <Color x:Key="Black">#FF000000</Color>
+
+    <!-- ===========================
+     2. Grautöne (hell bis dunkel)
+     =========================== -->
+    <Color x:Key="Gray100">#FFF5F5F5</Color>
+    <Color x:Key="Gray200">#FFE0E0E0</Color>
+    <Color x:Key="Gray300">#FFBDBDBD</Color>
+    <Color x:Key="Gray400">#FF9E9E9E</Color>
+    <Color x:Key="Gray500">#FF757575</Color>
+    <Color x:Key="Gray600">#FF616161</Color>
+    <Color x:Key="Gray900">#FF212121</Color>
+    <Color x:Key="Gray950">#FF121212</Color>
+
+    <!-- ===========================
+     3. Primär‐/Sekundärfarben
+     =========================== -->
+    <!-- Beispiel: grünlicher “Primary”, wie gewünscht -->
+    <Color x:Key="Primary">#FF4CAF50</Color>
+    <Color x:Key="PrimaryDark">#FF388E3C</Color>
+    <!-- Textfarbe, wenn dunkler Hintergrund (PrimaryDark) aktiv ist -->
+    <Color x:Key="PrimaryDarkText">#FFFFFFFF</Color>
+
+    <!-- Sekundärfarbe (z. B. für “Switch On” im Dark Mode o. ä.) -->
+    <Color x:Key="Secondary">#FFCDDC39</Color>
+    <Color x:Key="SecondaryDarkText">#FF000000</Color>
+
+    <!-- Zusätzliche Akzentfarben, die in den Styles referenziert werden -->
+    <Color x:Key="Magenta">#FFFF00FF</Color>
+    <Color x:Key="MidnightBlue">#FF003366</Color>
+
+    <!-- ===========================
+     4. Schwarz‐Varianten für Dark Mode
+     =========================== -->
+    <Color x:Key="OffBlack">#FF121212</Color>
+
+    <!-- ===========================
+     5. Seiten‐Hintergrundfarben
+     =========================== -->
+    <Color x:Key="PageBackgroundColor">#2F4F4F</Color>
+    <Color x:Key="PageBackgroundDark">#FF121212</Color>
+
+    <!-- ===========================
+     6. Falls noch weiter benutzte Keys benötigt werden, hier ergänzen…
+     (z. B. „TextColor“ oder „AccentColor“, falls direkt angefragt)
+     =========================== -->
+    <!-- Beispiel: allgemeine Textfarbe (falls Ihr in XAML direkt {StaticResource TextColor} verwendet) -->
+    <Color x:Key="TextColor">Black</Color>
+    <Color x:Key="InputBackgroundColor">White</Color>
+    <Color x:Key="AccentColor">Green</Color>
+    
+
+</ResourceDictionary>

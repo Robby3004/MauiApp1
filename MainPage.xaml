@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <ScrollView>
+        <VerticalStackLayout
+        Padding="24"
+        Spacing="32"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+            <!-- ============================
+           1. ÜBERSCHRIFT (HeadLine)
+           ============================ -->
+            <Label
+        Text=""
+        Style="{StaticResource Headline}" />
+
+            <!-- ============================
+           2. Login‐Formular
+           ============================ -->
+            <VerticalStackLayout Spacing="16">
+
+                <!-- E-Mail / Nutzername -->
+                <Entry
+          x:Name="UsernameEntry"
+          Placeholder="Nutzername oder E-Mail"
+          BackgroundColor="{StaticResource InputBackgroundColor}"
+          PlaceholderColor="{StaticResource PlaceholderColor}"
+          TextColor="{StaticResource Black}"
+          FontFamily="Arial" />
+
+                <!-- Passwort -->
+                <Entry
+          x:Name="PasswordEntry"
+          IsPassword="True"
+          Placeholder="Passwort"
+          BackgroundColor="{StaticResource InputBackgroundColor}"
+          PlaceholderColor="{StaticResource PlaceholderColor}"
+          TextColor="{StaticResource Black}"
+          FontFamily="Arial" />
+
+                <!-- Login‐Button -->
+                <Button
+          Text="Einloggen"
+          Command="{Binding LoginCommand}" 
+          BackgroundColor="{StaticResource Primary}"
+          TextColor="{StaticResource White}"
+          FontFamily="Arial" />
+
+            </VerticalStackLayout>
+
+            <!-- ============================
+           3. „Registrieren“‐Link
+           ============================ -->
+            <Label
+        HorizontalOptions="Center"
+        TextColor="{StaticResource White}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Noch keinen Account? " />
+                        <Span
+              Text="Hier registrieren"
+              FontAttributes="Bold"
+              TextDecorations="Underline"
+              TextColor="{StaticResource Secondary}"
+              >
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer
+                  NumberOfTapsRequired="1"
+                  Command="{Binding NavigateToRegisterCommand}" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

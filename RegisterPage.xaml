@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="MauiApp1.Views.RegisterPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <!-- Beispielhafter Aufbau einer Registrierungsseite: -->
+
+    <ScrollView>
+        <VerticalStackLayout 
+        Padding="24"
+        Spacing="16"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+
+            <!-- Überschrift -->
+            <Label 
+        Text="Registrieren" 
+        Style="{StaticResource Headline}" />
+
+            <!-- Benutzername-Eingabe -->
+            <Entry 
+        Placeholder="Nutzername" 
+        BackgroundColor="{StaticResource InputBackgroundColor}"
+        PlaceholderColor="{StaticResource PlaceholderColor}"
+        TextColor="{StaticResource Black}"
+        FontFamily="Arial" />
+
+            <!-- E-Mail-Eingabe -->
+            <Entry 
+        Placeholder="E-Mail"
+        Keyboard="Email"
+        BackgroundColor="{StaticResource InputBackgroundColor}"
+        PlaceholderColor="{StaticResource PlaceholderColor}"
+        TextColor="{StaticResource Black}"
+        FontFamily="Arial" />
+
+            <!-- Passwort-Eingabe -->
+            <Entry 
+        IsPassword="True"
+        Placeholder="Passwort"
+        BackgroundColor="{StaticResource InputBackgroundColor}"
+        PlaceholderColor="{StaticResource PlaceholderColor}"
+        TextColor="{StaticResource Black}"
+        FontFamily="Arial" />
+
+            <!-- Bestätigung des Passworts -->
+            <Entry 
+        IsPassword="True"
+        Placeholder="Passwort wiederholen"
+        BackgroundColor="{StaticResource InputBackgroundColor}"
+        PlaceholderColor="{StaticResource PlaceholderColor}"
+        TextColor="{StaticResource Black}"
+        FontFamily="Arial" />
+
+            <!-- Button „Registrieren“ -->
+            <Button 
+        Text="Registrieren" 
+        Command="{Binding RegisterCommand}"
+        BackgroundColor="{StaticResource Primary}"
+        TextColor="{StaticResource White}"
+        FontFamily="Arial" />
+
+            <!-- Link zurück zum Login -->
+            <Label HorizontalOptions="Center" TextColor="{StaticResource White}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Bereits registriert? " />
+                        <Span 
+              Text="Hier einloggen" 
+              TextDecorations="Underline"
+              GestureRecognizers="{Binding TapGestureToLogin}" 
+              FontAttributes="Bold" 
+              TextColor="{StaticResource Secondary}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

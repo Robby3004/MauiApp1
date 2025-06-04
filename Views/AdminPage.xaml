@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:MauiApp1.Models"
+    x:Class="MauiApp1.Views.AdminPage"
+    x:Name="RootPage"
+    Title="User-Freigabe">
+
+    <StackLayout Padding="20" Spacing="15">
+        <!-- Ueberschrift -->
+        <Label
+      Text="Ausstehende Benutzerdaten"
+      FontSize="20"
+      FontAttributes="Bold"
+      HorizontalOptions="Center" />
+
+        <!-- ListView zur Anzeige der Pending-Users -->
+        <ListView
+      x:Name="PendingList"
+      HasUnevenRows="True"
+      SeparatorVisibility="Default"
+      ItemsSource="{Binding PendingUsers}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="models:User">
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Benutzer-Infos -->
+                            <StackLayout Grid.Column="0" Spacing="2">
+                                <Label
+                  Text="{Binding username}"
+                  FontAttributes="Bold"
+                  FontSize="16" />
+                                <Label
+                  Text="{Binding email}"
+                  FontSize="12"
+                  TextColor="Gray" />
+                            </StackLayout>
+
+                            <!-- Freigeben-Button -->
+                            <Button
+                Grid.Column="1"
+                Text="Freigeben"
+                BackgroundColor="Green"
+                TextColor="White"
+                CornerRadius="6"
+                Padding="10,5"
+                Command="{Binding Source={x:Reference AdminPage}, Path=BindingContext.ApproveCommand}"
+                CommandParameter="{Binding id}"
+                HorizontalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
